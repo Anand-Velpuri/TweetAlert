@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TweetAlert - Disaster Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/twitter-bird.css') }}">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <div class="twitter-bird">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                    </svg>
+                </div>
+                <h1 class="text-4xl font-bold text-indigo-600 mb-4">TweetAlert</h1>
+                <p class="text-gray-600">Analyze tweets for potential disaster-related content</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl p-6 mb-8 transform hover:scale-105 transition-transform duration-300">
+                <div class="mb-6">
+                    <label for="tweet-input" class="block text-gray-700 text-sm font-bold mb-2">Enter Tweet Text</label>
+                    <textarea
+                        id="tweet-input"
+                        class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-indigo-500"
+                        rows="4"
+                        placeholder="Type or paste your tweet here..."
+                    ></textarea>
+                </div>
+                <button
+                    id="analyze-btn"
+                    class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300"
+                >
+                    Analyze Tweet
+                </button>
+            </div>
+
+            <div id="result" class="hidden bg-white rounded-lg shadow-xl p-6 animate-fade-in">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Analysis Result</h2>
+                <div class="flex items-center justify-center">
+                    <div class="flex items-center">
+                        <div id="status-icon" class="w-8 h-8 rounded-full mr-3"></div>
+                        <span id="status-text" class="text-lg font-medium"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
