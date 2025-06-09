@@ -108,4 +108,4 @@ Contributions are welcome! Please feel free to submit issues, feature requests, 
 
 ## License
 
-[Optional: Add your project's license here, e.g., MIT License, Apache 2.0 License.]
+MIT License
